@@ -1,1 +1,22 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SM Note Web App</h1>
+        <form method="POST" action="/add_note">
+            <input type="text" name="content" placeholder="Enter your note" required>
+            <button type="submit">Add Note</button>
+        </form>
+        <h2>Your Notes:</h2>
+        <ul>
+            {% for note in notes %}
+                <li>{{ note }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
